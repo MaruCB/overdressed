@@ -1,0 +1,13 @@
+<div class="container">
+  <h1>Costumes</h1>
+  <% @costumes.each do |costume| %>
+  <div>
+    <p><%= costume.name %></p>
+    <%= image_tag costume.photo_url %>
+    <p><%= costume.size %></p>
+    <p><%= costume.price %></p>
+    <p><%= costume.category %></p>
+    <p><%= costume.description %></p>
+  </div>
+  <% end %>
+</div>
