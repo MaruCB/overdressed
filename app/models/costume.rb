@@ -1,6 +1,6 @@
 class Costume < ApplicationRecord
   CATEGORY = %w[Halloween Folk Christmas Party Fancy Carnival Animal Fantasy]
-  belongs_to :user, foreign_key: true
+  belongs_to :user
   has_many :bookings
 
   validates :price, :description, :size, :photo_url, presence: true
