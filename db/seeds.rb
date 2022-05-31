@@ -8,6 +8,7 @@
 Costume.destroy_all
 User.destroy_all
 
+
 puts "creating users..."
 
 User.create(username: "Anna", email: "anna@gmail.com", password: "password")
@@ -36,3 +37,4 @@ Costume.create(name: "Mother Nature", price: "30", description: "It's another bi
 Costume.create(name: "Tomato", price: "30", description: "It's another bird", size: "L", category: "Party", photo_url: "https://images.halloweencostumes.co.uk/products/67323/1-1/adult-inflatable-tomato-costume.jpg", user_id:1)
 
 puts "created #{Costume.count} costumes"
+

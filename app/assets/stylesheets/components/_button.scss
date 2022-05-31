@@ -1,0 +1,32 @@
+.explore-btn {
+  margin-top: 30px;
+  font-family: $body-font;
+  font-size: 20px;
+  border: 1px solid #4A4A4A;
+  padding: 8px 24px;
+  border-radius: 50px;
+  font-weight: lighter;
+  color: white;
+  background-color: $purple;
+  border-radius: 4px;
+  transition: opacity 0.3s ease;
+  border-color: $purple;
+  text-decoration: none;
+}
+
+.explore-btn:hover {
+  margin-top: 30px;
+  font-size: 20px;
+  font-family: $body-font;
+  border: 1px solid #4A4A4A;
+  padding: 8px 24px;
+  border-radius: 50px;
+  font-weight: lighter;
+  color: white;
+  background-color: white;
+  border-radius: 4px;
+  transition: opacity 0.3s ease;
+  border: 1px solid $purple;
+  text-decoration: none;
+  color: $purple;
+}
