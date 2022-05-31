@@ -1,0 +1,34 @@
+<div>
+  <div class="row">
+    <div class="col-12 col-md-6">
+      <h1><% @costume.name %></h1>
+    <br>
+      <div class="container">
+        <%= @costume.photo_url %>
+      </div>
+    <br>
+      <div class="card">
+        <ul class="list-group-flush">
+          <li><%= @costume.category %></li>
+          <li><%= @costume.description %></li>
+          <li><%= @costume.size %></li>
+          <li><%= @costume.price %></li>
+        </ul>
+      </div>
+    </div>
+    <br>
+    <br>
+    <div class="col-12 col-md-6">
+      <div class="row">
+        <h2>Rent this costume</h2>
+        <div class="simple_form">
+          <%= simple_form_for [@costume, @booking] do |f| %>
+            <%= f.input :start_date %>
+            <%= f.input :end_date %>
+            <%= f.button :submit %>
+          <% end %>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
