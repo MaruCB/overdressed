@@ -1,1 +1,95 @@
-// Specific CSS for your home-page
+@import "components/card";
+
+.body-center {
+  text-align: center;
+  justify-content: center;
+}
+
+.banner {
+  text-align: center;
+  justify-content: center;
+
+  h1 {
+    font-family: $display-font;
+    font-size: 160px;
+    font-weight: 400;
+    line-height: 130px;
+    letter-spacing: -0.03em;
+    margin-top: 0;
+    margin-bottom: 50px;
+  }
+
+  .form {
+    // display: flex;
+    // flex-direction: row;
+  }
+  .search-field {
+    // margin: auto;
+    width: 60%;
+    padding: 20px 35px 20px 15px;
+    border: none;
+    border-radius: 30px;
+    border: 1px solid black;
+
+  }
+
+  i {
+    padding-right: 20px;
+    color: $purple;
+  }
+
+  .search-button {
+    height: 15px;
+    width: 15px;
+    background: transparent;
+    border: none;
+    outline: none;
+    margin-left: -50px;
+  }
+
+
+}
+
+.featured-items {
+  color: white;
+  background-color: #49A15C;
+  padding-top: 40px;
+  padding-bottom: 40px;
+  padding-left: 100px;
+  padding-right: 100px;
+
+  h2 {
+    font-family: $display-font;
+    font-size: 90px;
+    font-weight: 400;
+    line-height: 90px;
+    letter-spacing: -0.03em;
+    text-align: center;
+  }
+
+ p {
+    font-family: $body-font;
+    font-size: 25px;
+    font-weight: 400;
+    line-height: 30px;
+    letter-spacing: -0.03em;
+    text-align: center;
+
+  }
+}
+
+.featured-sub-items-cards {
+  padding: 100px;
+  display: flex;
+
+  h2 {
+    margin-right: 50px;
+    font-size: 30px;
+    color: $purple;
+  }
+
+.card-container {
+  display: flex;
+  flex-direction: row;
+}
+}
