@@ -26,7 +26,7 @@ li {
 
 .nav-item1 {
   padding: 8px 24px;
-  border-radius: 50px;
+  // border-radius: 50px;
   font-weight: lighter;
   transition: opacity 0.3s ease;
   color: $purple;
@@ -47,7 +47,9 @@ li {
   padding: 8px 24px;
   border-radius: 50px;
   font-weight: lighter;
-  color: $purple;
+  color: white;
+  background-color: $purple;
+  border-radius: 4px;
   transition: opacity 0.3s ease;
   border-color: $purple;
   text-decoration: none;
@@ -57,11 +59,14 @@ li {
   border: 1px solid #4A4A4A;
   padding: 8px 24px;
   border-radius: 50px;
-  font-weight: bold;
-  color: $red;
+  font-weight: lighter;
+  color: white;
+  background-color: white;
+  border-radius: 4px;
   transition: opacity 0.3s ease;
-  border-color: $purple;
+  border: 1px solid $purple;
   text-decoration: none;
+  color: $purple;
 }
 
 }
