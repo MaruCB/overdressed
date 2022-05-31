@@ -1,12 +1,67 @@
-.navbar-lewagon {
+.navbar {
+  display: flex;
+  flex-direction: row;
   justify-content: space-between;
-  background: white;
+  background: $white;
+  font-family: 'Righteous', cursive;
+  margin: 0px;
+  width: 100%;
+  padding: 16px;
+
+
+.logo {
+  font-family: 'Righteous', cursive;
+  color: $purple;
 }
 
-.navbar-lewagon .navbar-collapse {
+.sign-up {
   flex-grow: 0;
+  display:flex;
+  color: $purple;
 }
 
-.navbar-lewagon .navbar-brand img {
-  width: 40px;
+li {
+  list-style-type: none;
+}
+
+.nav-item1 {
+  padding: 8px 24px;
+  border-radius: 50px;
+  font-weight: lighter;
+  transition: opacity 0.3s ease;
+  color: $purple;
+  text-decoration: none;
+}
+
+.nav-item1:hover {
+  padding: 8px 24px;
+  border-radius: 50px;
+  font-weight: bold;
+  color: red;
+  transition: opacity 0.3s ease;
+  border-color: $red;
+}
+
+.nav-item2 {
+  border: 1px solid #4A4A4A;
+  padding: 8px 24px;
+  border-radius: 50px;
+  font-weight: lighter;
+  color: $purple;
+  transition: opacity 0.3s ease;
+  border-color: $purple;
+  text-decoration: none;
+}
+
+.nav-item2:hover {
+  border: 1px solid #4A4A4A;
+  padding: 8px 24px;
+  border-radius: 50px;
+  font-weight: bold;
+  color: $red;
+  transition: opacity 0.3s ease;
+  border-color: $purple;
+  text-decoration: none;
+}
+
 }
