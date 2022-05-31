@@ -1,4 +1,6 @@
 class CostumesController < ApplicationController
+  before_action :set_costume, only: [:show]
+
   def index
     @costumes = Costume.all
   end
@@ -16,13 +18,17 @@ class CostumesController < ApplicationController
     end
   end
 
+  def show
+    @booking = Booking.new
+  end
+
   private
 
-  def costume_params()
+  def costume_params
     params.require(:costume).permit(:name, :price, :description, :size, :category)
   end
 
   def set_costume
-    @costume = Costume.find(params[:costume_id])
+    @costume = Costume.find(params[:id])
   end
 end
