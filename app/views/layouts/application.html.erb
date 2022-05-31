@@ -16,14 +16,22 @@
   <body>
    <div class="navbar">
     <div class="logo">OVERDRESSED</div>
+    <% if user_signed_in? %>
+      <div class="sign-up">
+         <li>
+              <%= link_to "Sign out", "#", class: "nav-item2 active" %>
+          </li>
+      </div>
+    <% else %>
       <ul class="sign-up">
           <li>
-              <%= link_to "Sign up", "#s", class: "nav-item1 active" %>
+              <%= link_to "Sign up", "#", class: "nav-item1 active" %>
           </li>
           <li>
             <%= link_to "Sign in", "#", class: "nav-item2" %>
           </li>
       </ul>
+    <% end %>
     </div>
 
   <%= yield %>
