@@ -1,35 +1,49 @@
-<div>
+<div class = "show-container">
   <div class="row">
     <div class="col-12 col-md-6">
-      <h1><% @costume.name %></h1>
     <br>
-      <div class="card">
+        <div class="img-container">
         <%= image_tag @costume.photo_url %>
-      </div>
+        </div>
+
+  <br>
     <br>
-      <div class="card">
-        <ul class="list-group-flush">
-          <li><p><%= @costume.category %></li>
-          <li><%= @costume.description %></li>
-          <li><%= @costume.size %></li>
-          <li><%= @costume.price %></li>
-        </ul>
-      </div>
+     <br>
+
     </div>
     <br>
     <br>
+    <br>
+    <br>
     <div class="col-12 col-md-6">
-      <div class="row">
-        <h2>Rent this costume</h2>
-        <div class="simple_form">
-          <%= simple_form_for [@costume, @booking] do |f| %>
-            <%= f.input :start_date %>
-            <%= f.input :end_date %>
-            <p>Price £ <%= @costume.price  %></p>
-            <%= f.button :submit, value: "Book now" %>
-          <% end %>
+      <%# <div class="row"> %>
+          <div class = "description">
+             <h2><%= @costume.name %></h2>
+  <hr>
+          <h4> Description: </h4>
+         <p> <%= @costume.description %> </p>
+          <h4> Category: </h4>
+          <p><%= @costume.category %></p>
+          <h4> Size: </h4>
+           <p><%= @costume.size %> </h4></p>
+         </div>
+
+         <br>
+          <br>
+        <div class="booking-container">
+          <h2>Rent this costume from <strong>£<%= @costume.price %>/day</strong></h2>
+          <br>
+          <div class="simple_form">
+            <%= simple_form_for [@costume, @booking] do |f| %>
+              <%= f.input :start_date %>
+              <%= f.input :end_date %>
+              <br>
+              <hr>
+              <p>Price £ <%= @costume.price  %></p>
+              <%= f.button :submit, value: "Book now", class: "book-btn" %>
+            <% end %>
         </div>
-      </div>
+      <%# </div> %>
     </div>
   </div>
 </div>

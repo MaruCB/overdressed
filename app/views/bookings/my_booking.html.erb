@@ -1,9 +1,18 @@
-<% @bookings.each do |booking|%>
-<div class="container">
-<p><strong>Start Date: </strong> <%= booking.start_date %></p>
-<p><strong>End Date: </strong> <%= booking.end_date %></p>
-<p><strong>Costume Name: </strong><%= booking.costume.name %></p>
-<p><strong>Price: </strong>£<%= booking.costume.price %> <strong>per day</strong></p>
-<%= image_tag booking.costume.photo_url, alt: booking.costume.name %>
-<% end %>
+
+  <div class = "center">
+  <div class="index-container">
+  <h1 class="p-4" >Bookings</h1>
+  <div class="card-container">
+  <% @bookings.each do |booking| %>
+    <div class = "card">
+      <div class="card-item-image">
+          <%= image_tag booking.costume.photo_url  %>
+      </div>
+        <h3><%= booking.costume.name %></h3>
+         <p><%= booking.costume.size %></p>
+        <h4>£<%= booking.costume.price %> per day</h4>
+    </div>
+  <% end %>
+</div>
+</div>
 </div>
