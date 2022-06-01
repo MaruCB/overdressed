@@ -1,5 +1,5 @@
 class BookingsController < ApplicationController
-  before_action :set_costume, only: [new, :create]
+  before_action :set_costume, only: [:new, :create]
   def new
     @booking = Booking.new
   end
