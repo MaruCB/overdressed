@@ -2,15 +2,18 @@
 <html>
 
 <head>
+
 <title>Overdressed</title>
+<script src="https://cdn.jsdelivr.net/npm/typed.js@2.0.12"></script>
 <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
 </head>
 <body>
 
-
 <section class="banner body-center">
   <img src = "https://res.cloudinary.com/dpjxlsdtk/image/upload/v1653996934/costume_homepage_mjs2p1.png" class = "banner-img">
-  <h1>Rent all the best costumes</h1>
+
+   <h1>Rent all the best costumes</h1>
+
   <form action = "/" method = "GET" class = "form">
     <input type="text" placeholder="What are you searching for today?" class = "search-field">
     <button type="submit" class = "search-button"><i class="fa fa-search"></i></button>
@@ -19,9 +22,18 @@
 
 <br>
 <br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
 
-  <div class = "featured-sub-items-cards">
+
+<section class = "featured-cards body-center">
   <h2> Featured <h2>
+  <div class = "featured-sub-items-cards">
   <div class = "card-container">
 
     <div class = "card">
@@ -61,13 +73,20 @@
 
     </div>
 
-    <button class = "explore-btn">Explore all</button>
     </div>
+    <%= link_to "Explore all", costumes_path, class: "explore-btn" %>
+</section>
 
 
 
 <br>
 <br>
+<br>
+<br>
+<br>
+<br>
+<br>
+
 <section class="featured-items body-center">
 <h2>We're giving costumes<br>a second chance</h2>
 <br>

@@ -1,7 +1,7 @@
 .card {
 width: 300px;
 color: black;
-height: 450px;
+height: 500px;
 padding: 15px;
 margin-right: 10px;
 border: none;
@@ -10,6 +10,13 @@ box-shadow: 0 1px 10px rgba(0, 0, 0, 0.2);
 .card-item-image {
   height: 350px;
   width: 100%;
+  object-fit: contain;
+}
+
+.card-item-image img {
+  height: 350px;
+  width: 100%;
+  object-fit: contain;
 }
 
 p {
@@ -22,10 +29,12 @@ border-radius: 4px;
 font-size: 10px;
 }
 
-h3 {
+h3 a {
 font-size: 20px;
 margin: 0px;
 padding-bottom: 0.3px;
+text-decoration: none;
+color: black;
 }
 
 h4 {

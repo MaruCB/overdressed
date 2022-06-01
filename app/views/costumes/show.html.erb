@@ -3,8 +3,8 @@
     <div class="col-12 col-md-6">
       <h1><% @costume.name %></h1>
     <br>
-      <div class="img-container">
-        <%= @costume.photo_url %>
+      <div class="card">
+        <%= image_tag @costume.photo_url %>
       </div>
     <br>
       <div class="card">
@@ -25,7 +25,8 @@
           <%= simple_form_for [@costume, @booking] do |f| %>
             <%= f.input :start_date %>
             <%= f.input :end_date %>
-            <%= f.button :submit %>
+            <p>Price £ <%= @costume.price  %></p>
+            <%= f.button :submit, value: "Book now" %>
           <% end %>
         </div>
       </div>

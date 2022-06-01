@@ -79,8 +79,10 @@
 }
 
 .featured-sub-items-cards {
-  padding: 100px;
+  // padding: 100px;
   display: flex;
+  justify-content: center;
+  padding-bottom: 20px;
 
   h2 {
     margin-right: 50px;
