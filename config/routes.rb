@@ -4,5 +4,5 @@ Rails.application.routes.draw do
   resources :costumes, only: [:index, :show, :new, :destroy] do
     resources :bookings, only: [:new, :create]
   end
-  get "my_bookings", to: "bookings#my_bookings"
+  get "my_booking", to: "bookings#my_booking"
 end
