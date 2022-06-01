@@ -1,0 +1,12 @@
+<div class="center index-container">
+  <h1>Add a new costume</h1>
+  <%= simple_form_for @costume do |f| %>
+    <%= f.input :name, placeholder: "Name" %>
+    <%= f.input :price, placeholder: "Price" %>
+    <%= f.input :description, placeholder: "Description" %>
+    <%= f.input :size, placeholder: "Size" %>
+    <%= f.input :category, collection: Costume::CATEGORY %>
+    <%= f.input :photo_url, placeholder: "Photo URL" %>
+    <%= f.submit class: "explore-btn" %>
+  <% end %>
+</div>
