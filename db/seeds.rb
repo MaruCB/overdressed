@@ -5,8 +5,8 @@
 #
 #   movies = Movie.create([{ name: "Star Wars" }, { name: "Lord of the Rings" }])
 #   Character.create(name: "Luke", movie: movies.first)
-Costume.destroy_all
-User.destroy_all
+# Costume.destroy_all
+# User.destroy_all
 
 
 puts "creating users..."
@@ -37,4 +37,3 @@ Costume.create(name: "Mother Nature", price: "30", description: "It's another bi
 Costume.create(name: "Tomato", price: "30", description: "It's another bird", size: "L", category: "Party", photo_url: "https://images.halloweencostumes.co.uk/products/67323/1-1/adult-inflatable-tomato-costume.jpg", user_id:1)
 
 puts "created #{Costume.count} costumes"
-
