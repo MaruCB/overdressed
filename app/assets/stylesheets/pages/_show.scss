@@ -1,0 +1,54 @@
+.show-container {
+  padding-left: 200px;
+  padding-right: 200px;
+  padding-top: 80px;
+  text-align: left;
+  justify-content: center;
+}
+
+.description {
+  width: 80%;
+  p {
+    font-size: 18px;
+  }
+
+  h4 {
+    display: block;
+    color: grey;
+    font-size: 12px;
+  }
+}
+
+img {
+  justify-content: center;
+
+  height: 500px;
+}
+
+.booking-container {
+  width: 80%;
+  background: rgb(246, 246, 246);
+  padding: 20px;
+  box-shadow: 0 1px 10px rgba(0, 0, 0, 0.2);
+  border-radius: 10px;
+
+  .book-btn {
+    background-color: $purple;
+    color: white;
+    border-radius: 10px;
+    width: 100%;
+  }
+
+  .book-btn:hover {
+    background-color: rgb(246, 246, 246);
+    color: $purple;
+    border: 1px solid $purple;
+    border-radius: 10px;
+    width: 100%;
+  }
+
+  h2 {
+    font-size: 20px;
+    font-weight: 300;
+  }
+}
