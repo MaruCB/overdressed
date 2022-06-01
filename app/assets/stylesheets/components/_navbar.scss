@@ -24,7 +24,7 @@ li {
   list-style-type: none;
 }
 
-.nav-item1 {
+.nav-item1:hover {
   padding: 8px 24px;
   // border-radius: 50px;
   font-weight: lighter;
@@ -33,7 +33,7 @@ li {
   text-decoration: none;
 }
 
-.nav-item1:hover {
+.nav-item1 {
   padding: 8px 24px;
   border-radius: 50px;
   font-weight: bold;
@@ -42,7 +42,7 @@ li {
   border-color: $red;
 }
 
-.nav-item2 {
+.nav-item2:hover {
   border: 1px solid #4A4A4A;
   padding: 8px 24px;
   border-radius: 50px;
@@ -55,7 +55,7 @@ li {
   text-decoration: none;
 }
 
-.nav-item2:hover {
+.nav-item2 {
   border: 1px solid #4A4A4A;
   padding: 8px 24px;
   border-radius: 50px;
