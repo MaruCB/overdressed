@@ -11,11 +11,12 @@ class CostumesController < ApplicationController
 
   def create
     @costume = Costume.new(costume_params)
-    if @costume.save
-      redirect_to costume_path(@costume)
-    else
-      render :new, status: :unprocessable_entity
-    end
+    @costume.user_id = current_user.id
+    @costume.save
+    redirect_to costume_path(@costume)
+    # else
+    #   render :new, status: :unprocessable_entity
+    # end
   end
 
   def show
@@ -26,7 +27,7 @@ class CostumesController < ApplicationController
   private
 
   def costume_params
-    params.require(:costume).permit(:name, :price, :description, :size, :category)
+    params.require(:costume).permit(:name, :price, :description, :size, :category, :photo_url)
   end
 
   def set_costume

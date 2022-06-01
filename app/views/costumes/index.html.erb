@@ -1,13 +1,17 @@
-<div class="container">
-  <h1>Costumes</h1>
+  <div class = "center">
+  <div class="index-container">
+  <h1>Find a costume!</h1>
+  <div class="card-container">
   <% @costumes.each do |costume| %>
-  <div>
-    <p><%= costume.name %></p>
-    <%= image_tag costume.photo_url %>
-    <p><%= costume.size %></p>
-    <p><%= costume.price %></p>
-    <p><%= costume.category %></p>
-    <p><%= costume.description %></p>
-  </div>
+    <div class = "card">
+      <div class="card-item-image">
+          <%= image_tag costume.photo_url  %>
+      </div>
+         <p><%= costume.size %> </p>
+        <h3><%=link_to costume.name, costume_path(costume[:id])%></h3>
+        <h4><strong>Rent</strong> from <%= costume.price %></h4>
+    </div>
   <% end %>
+</div>
+</div>
 </div>
