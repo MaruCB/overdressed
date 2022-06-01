@@ -19,7 +19,8 @@
     <% if user_signed_in? %>
       <div class="sign-up">
          <li>
-              <%= link_to "Sign out", "#", class: "nav-item2 active" %>
+              <%= link_to " + Add a Costume", new_costume_path, class: "nav-item2 active" %>
+              <%= link_to "Sign out", "", class: "nav-item2 active" %>
           </li>
       </div>
     <% else %>
