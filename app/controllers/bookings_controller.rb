@@ -7,14 +7,14 @@ class BookingsController < ApplicationController
   def create
     @booking = Booking.new(booking_params)
     @booking.costume = @costume
+    @booking.user = current_user
     flash[:notice] = @booking.errors.full_messages.to_sentence unless @booking.save
     redirect_to my_booking_path
   end
 
   def my_booking
     # to get the bookings that I am renting from other users
-    @bookings = Booking.where(user_id: current_user)
-
+    @bookings = Booking.where(user_id: current_user.id)
   end
 
   private
