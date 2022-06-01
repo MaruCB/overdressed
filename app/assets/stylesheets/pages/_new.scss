@@ -1,0 +1,30 @@
+
+
+.new-costume {
+  padding: 100px;
+  width: 50%;
+  margin: auto;
+  justify-content: center;
+}
+
+.body-center {
+  text-align: center;
+  justify-content: center;
+}
+
+.submit-btn {
+  background-color: $purple;
+    color: white;
+    border-radius: 10px;
+    width: 100%;
+    padding: 15px;
+}
+
+.submit-btn:hover {
+  background-color: rgb(246, 246, 246);
+  color: $purple;
+  border: 1px solid $purple;
+  border-radius: 10px;
+  width: 100%;
+  padding: 15px;
+}
