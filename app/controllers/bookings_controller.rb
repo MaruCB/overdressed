@@ -1,10 +1,10 @@
 class BookingsController < ApplicationController
+  before_action :set_costume, only: [new, :create]
   def new
     @booking = Booking.new
   end
 
   def create
-    @costume = Costume.find(params[:costume_id])
     @booking = Booking.new(booking_params)
     @booking.costume = @costume
     flash[:notice] = @booking.errors.full_messages.to_sentence unless @booking.save
@@ -21,6 +21,10 @@ class BookingsController < ApplicationController
 
   def booking_params
     params.require(:booking).permit(:start_date, :end_date)
+  end
+
+  def set_costume
+    @costume = Costume.find(params[:costume_id])
   end
 end
 # costume.user not user.booking
