@@ -13,8 +13,7 @@ class BookingsController < ApplicationController
 
   def my_booking
     # to get the bookings that I am renting from other users
-    @user = current_user
-    @bookings = @user.bookings
+    @bookings = Bookings.where(user: current_user)
   end
 
   private
