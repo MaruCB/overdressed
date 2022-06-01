@@ -21,7 +21,6 @@ class CostumesController < ApplicationController
 
   def show
     @booking = Booking.new
-    redirect_to my_booking_path(@booking)
   end
 
   private
