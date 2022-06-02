@@ -42,7 +42,7 @@
                 <%= f.input :end_date, html5: true %>
                 <br>
                 <hr>
-                <p>Price £<%= @costume.price  %></p>
+                <p>Price £<%= @costume.price.round  %></p>
                 <%= f.button :submit, value: "Book now", class: "book-btn" %>
               <% end %>
              </div>

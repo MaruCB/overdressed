@@ -11,7 +11,7 @@
         </div>
           <h3><%= costume.name %></h3>
           <p>Size: <%= costume.size %></p>
-          <h4>£<%= costume.price %> per day</h4>
+          <h4>£<%= costume.price.round %> per day</h4>
       </div>
       <% end %>
     </div>
