@@ -2,7 +2,7 @@ class CostumesController < ApplicationController
   before_action :set_costume, only: [:show]
 
   def index
-    @costumes = Costume.all
+    @costumes = Costume.order(created_at: :desc)
   end
 
   def new
