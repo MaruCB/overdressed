@@ -1,0 +1,30 @@
+   <div class="navbar">
+    <%= link_to "OVERDRESSED", root_path, class: "logo" %>
+    <% if user_signed_in? %>
+      <div class="sign-up">
+          <li class="m-1">
+            <%= link_to "All Costumes", costumes_path, class: "nav-item2 active" %>
+          </li>
+          <li class="m-1">
+            <%= link_to " + Add a Costume", new_costume_path, class: "nav-item2 active" %>
+          </li>
+          <li class="nav-item dropdown">
+            <%= image_tag "user.png", class: "avatar dropdown-toggle", id: "navbarDropdown", data: { bs_toggle: "dropdown" }, 'aria-haspopup': true, 'aria-expanded': false %>
+            <div class="dropdown-menu dropdown-menu-end mt-2" aria-labelledby="navbarDropdown">
+              <%= link_to "My Bookings", my_booking_path, class: "dropdown-item" %>
+              <%= link_to "My Costumes", my_costume_path, class: "dropdown-item border-top" %>
+              <%= link_to "Sign out", destroy_user_session_path, data: { turbo_method: :delete}, class: "dropdown-item border-top"  %>
+            </div>
+          </li>
+      </div>
+    <% else %>
+      <ul class="sign-up">
+          <li>
+              <%= link_to "Sign up", new_user_registration_path, class: "nav-item1 active" %>
+          </li>
+          <li>
+            <%= link_to "Log in", new_user_session_path, class: "nav-item2" %>
+          </li>
+      </ul>
+    <% end %>
+    </div>

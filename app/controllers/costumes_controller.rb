@@ -2,7 +2,7 @@ class CostumesController < ApplicationController
   before_action :set_costume, only: [:show, :edit, :update, :destroy]
 
   def index
-    @costumes = Costume.all
+    @costumes = Costume.order(created_at: :desc)
   end
 
   def new
@@ -37,6 +37,10 @@ class CostumesController < ApplicationController
   def destroy
     @costume.destroy
     redirect_to costumes_path, status: :see_other
+  end
+
+  def my_costume
+    @costumes = Costume.where(user_id: current_user.id)
   end
 
   private

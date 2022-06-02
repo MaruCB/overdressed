@@ -5,4 +5,5 @@ Rails.application.routes.draw do
     resources :bookings, only: [:new, :create]
   end
   get "my_booking", to: "bookings#my_booking"
+  get "my_costume", to: "costumes#my_costume"
 end

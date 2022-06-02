@@ -6,10 +6,12 @@
   <% @bookings.each do |booking| %>
     <div class = "card">
       <div class="card-item-image">
-          <%= image_tag booking.costume.photo_url  %>
+      <%= link_to costume_path(booking.costume[:id]) do %>
+        <%= image_tag(booking.costume.photo_url) %>
+        <% end %>
       </div>
         <h3><%= booking.costume.name %></h3>
-         <p><%= booking.costume.size %></p>
+         <p>Size: <%= booking.costume.size %></p>
         <h4>£<%= booking.costume.price %> per day</h4>
     </div>
   <% end %>

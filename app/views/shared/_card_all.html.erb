@@ -1,0 +1,14 @@
+  <div class="card-container">
+  <% @costumes.each do |costume| %>
+    <div class = "card">
+      <div class="card-item-image">
+      <%= link_to costume_path(costume[:id]) do %>
+        <%= image_tag(costume.photo_url) %>
+      <% end %>
+      </div>
+         <p>Size: <%= costume.size %></p>
+        <h3><%=link_to costume.name, costume_path(costume[:id])%></h3>
+        <h4><strong>Rent</strong> from £<%= costume.price %></h4>
+    </div>
+  <% end %>
+</div>

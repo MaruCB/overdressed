@@ -12,6 +12,7 @@
 .logo {
   font-family: 'Righteous', cursive;
   color: $purple;
+  text-decoration: none;
 }
 
 .sign-up {
@@ -69,4 +70,24 @@ li {
   color: $purple;
 }
 
+}
+.avatar {
+  padding: 5%;
+  width: 36px;
+  height: 36px;
+  border-radius: 50%;
+  border: white 1px solid;
+  border-color: $purple;
+  margin-left: 4px;
+  margin-top: -5%;
+}
+
+.dropdown-menu {
+  border-radius: 4px;
+  border: white 1px solid;
+  border-color: $purple;
+}
+
+.dropdown-item {
+  color: #6a6767;
 }
