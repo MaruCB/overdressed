@@ -16,6 +16,22 @@ class BookingsController < ApplicationController
     # to get the bookings that I am renting from other users
     @bookings = Booking.where(user_id: current_user.id)
     # raise
+    @my_costume_bookings = Booking.where(costume_id: Costume.where(user: current_user))
+    # raise
+  end
+
+  def accept
+    @booking = Booking.find(params[:id])
+    @booking.accepted = "Accepted"
+    @booking.save
+    redirect_to my_booking_path, status: :see_other
+  end
+
+  def decline
+    @booking = Booking.find(params[:id])
+    @booking.accepted = "Declined"
+    @booking.save
+    redirect_to my_booking_path, status: :see_other
   end
 
   private
