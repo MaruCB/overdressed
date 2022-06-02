@@ -1,7 +1,8 @@
+<% if @bookings.blank? == false %>
 
   <div class = "center">
   <div class="index-container">
-  <h1 class="p-4" >Bookings</h1>
+  <h1 class="p-4" >My Bookings</h1>
   <div class="card-container">
   <% @bookings.each do |booking| %>
     <div class = "card">
@@ -11,10 +12,60 @@
         <% end %>
       </div>
         <h3><%= booking.costume.name %></h3>
-         <p>Size: <%= booking.costume.size %></p>
+         <p><strong>Status: </strong><%= booking.accepted %></p>
         <h4>£<%= booking.costume.price %> per day</h4>
+      </div>
+    <% end %>
+  </div>
+  <% elsif @bookings.blank? == true %>
+  <div class = "center">
+    <h1 class="p-4" >My Bookings</h1>
+    <div class="no-bookings-yet mt-5" style="text-align:center">
+      <p style="text-align:center; color: RGB(100, 91, 85)">No bookings yet!</p>
+      <%= link_to costumes_path do %>
+        <%= image_tag "booking.png", style:"width: 60px; height: 60px; opacity: 0.7 " %>
+        <% end %>
     </div>
+  </div>
   <% end %>
-</div>
-</div>
-</div>
+<br>
+<br>
+<br>
+<br>
+
+<hr>
+<% if @my_costume_bookings.blank? == false %>
+<div class = "center">
+  <div class="index-container">
+  <h1 class="p-4" >My Pending Bookings</h1>
+    <div class="card-container">
+    <% @my_costume_bookings.each do |booking| %>
+      <div class = "card">
+        <div class="card-item-image">
+        <%= link_to costume_path(booking.costume[:id]) do %>
+          <%= image_tag(booking.costume.photo_url) %>
+          <% end %>
+        </div>
+          <h5><strong>Booked by:</strong> <%= booking.user.email %></h5>
+          <%if booking.accepted == "pending"%>
+            <%= link_to "Accept Booking", accept_booking_path(booking), class: "btn btn-success", data: {turbo_method: :post} %>
+            <%= link_to "Decline Booking", decline_booking_path(booking), class: "btn btn-danger", data: {turbo_method: :post} %>
+          <% elsif booking.accepted == "accepted" || "declined" %>
+            <h6><%= booking.accepted.capitalize %></h6>
+          <% end %>
+      </div>
+    <% end %>
+    <% elsif @my_costume_bookings.blank? == true %>
+    <div class = "center">
+    <h1 class="p-4" >My Pending Bookings</h1>
+    <div class="no-bookings-yet mt-5" style="text-align:center">
+      <p style="text-align:center; color: RGB(100, 91, 85)">No one booked any of your costumes yet!</p>
+        <%= image_tag "sad.png", style:"width: 60px; height: 60px; opacity: 0.7", class: "mb-4" %>
+    </div>
+  </div>
+    <% end %>
+  </div>
+  </div>
+  </div>
+  </div>
+  </div>
