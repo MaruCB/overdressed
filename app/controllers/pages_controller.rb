@@ -1,6 +1,6 @@
 class PagesController < ApplicationController
   #   root to: "users#home"
-  def home
-    # render "/home"
-  end
+ def home
+  @costumes = Costume.all
+ end
 end
