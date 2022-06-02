@@ -14,10 +14,19 @@
 
    <h1>Rent all the best costumes</h1>
 
-  <form action = "/" method = "GET" class = "form">
+  <%# <form action = "/" method = "GET" class = "form">
     <input type="text" placeholder="What are you searching for today?" class = "search-field">
     <button type="submit" class = "search-button"><i class="fa fa-search"></i></button>
-  </form>
+  </form> %>
+
+  <%= form_tag costumes_path, method: :get, class: "d-flex" do %>
+    <%= text_field_tag :query,
+      params[:query],
+      class: "search-field",
+      placeholder: "What are you searching for today?"
+    %>
+    <%= submit_tag "Search", class: "btn btn-primary" %>
+  <% end %>
 </section>
 
 <section>
