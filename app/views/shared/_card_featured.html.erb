@@ -2,7 +2,9 @@
   <% @costumes.first(4).each do |costume| %>
     <div class = "card">
       <div class="card-item-image">
-          <%= image_tag costume.photo_url  %>
+        <%= link_to costume_path(costume[:id]) do %>
+        <%= image_tag(costume.photo_url) %>
+        <% end %>
       </div>
          <p><%= costume.size %> </p>
         <h3><%=link_to costume.name, costume_path(costume[:id])%></h3>
