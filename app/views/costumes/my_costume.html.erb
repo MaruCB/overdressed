@@ -1,20 +1,19 @@
-
-  <div class = "center">
+<div class = "center">
   <div class="index-container">
-  <h1 class="p-4">Costumes</h1>
-  <div class="card-container">
-  <% @costumes.each do |costume| %>
-    <div class = "card">
-      <div class="card-item-image">
-      <%= link_to costume_path(costume[:id]) do %>
-        <%= image_tag(costume.photo_url) %>
-      <% end %>
+    <h1 class="p-4">Costumes</h1>
+    <div class="card-container">
+      <% @costumes.each do |costume| %>
+      <div class = "card">
+        <div class="card-item-image">
+          <%= link_to costume_path(costume[:id]) do %>
+          <%= image_tag(costume.photo_url) %>
+          <% end %>
+        </div>
+          <h3><%= costume.name %></h3>
+          <p>Size: <%= costume.size %></p>
+          <h4>£<%= costume.price %> per day</h4>
       </div>
-        <h3><%= costume.name %></h3>
-         <p>Size: <%= costume.size %></p>
-        <h4>£<%= costume.price %> per day</h4>
+      <% end %>
     </div>
-  <% end %>
-</div>
-</div>
+  </div>
 </div>
