@@ -1,5 +1,5 @@
 class CostumesController < ApplicationController
-  before_action :set_costume, only: [:show]
+  before_action :set_costume, only: [:show, :edit, :update, :destroy]
 
   def index
     @costumes = Costume.order(created_at: :desc)
@@ -7,6 +7,9 @@ class CostumesController < ApplicationController
 
   def new
     @costume = Costume.new
+  end
+
+  def edit
   end
 
   def create
@@ -19,8 +22,21 @@ class CostumesController < ApplicationController
     # end
   end
 
+  def update
+    if @costume.update(costume_params)
+      redirect_to @costume
+    else
+      render :edit
+    end
+  end
+
   def show
     @booking = Booking.new
+  end
+
+  def destroy
+    @costume.destroy
+    redirect_to costumes_path, status: :see_other
   end
 
   def my_costume
