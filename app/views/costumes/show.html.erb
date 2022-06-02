@@ -33,10 +33,10 @@
         <div class="booking-container">
           <h2>Rent this costume from <strong>£<%= @costume.price %>/day</strong></h2>
           <br>
-          <div class="simple_form">
+          <div>
             <%= simple_form_for [@costume, @booking] do |f| %>
-              <%= f.input :start_date %>
-              <%= f.input :end_date %>
+              <%= f.input :start_date, html5: true %>
+              <%= f.input :end_date, html5: true %>
               <br>
               <hr>
               <p>Price £ <%= @costume.price  %></p>
