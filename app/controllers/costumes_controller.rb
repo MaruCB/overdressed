@@ -23,6 +23,10 @@ class CostumesController < ApplicationController
     @booking = Booking.new
   end
 
+  def my_costume
+    @costumes = Costume.where(user_id: current_user.id)
+  end
+
   private
 
   def costume_params
