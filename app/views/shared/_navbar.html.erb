@@ -1,6 +1,16 @@
    <div class="navbar">
     <%= link_to "OVERDRESSED", root_path, class: "logo" %>
     <% if user_signed_in? %>
+      <div class="searchbar">
+        <%= form_tag costumes_path, method: :get, class: "d-flex" do %>
+          <%= text_field_tag :query,
+          params[:query],
+          class: "search-field",
+          placeholder: "What are you searching for today?"
+          %>
+          <%= submit_tag "Search", class: "btn btn-primary" %>
+        <% end %>
+      </div>
       <div class="sign-up">
           <li class="m-1">
             <%= link_to "All Costumes", costumes_path, class: "nav-item2 active" %>
