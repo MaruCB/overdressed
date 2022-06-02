@@ -5,8 +5,9 @@
 #
 #   movies = Movie.create([{ name: "Star Wars" }, { name: "Lord of the Rings" }])
 #   Character.create(name: "Luke", movie: movies.first)
-# Costume.destroy_all
-# User.destroy_all
+# Costume.delete_all
+# User.delete_all
+# Booking.delete_all
 
 puts "creating users..."
 
@@ -49,4 +50,4 @@ Booking.create(start_date: "15/10/2022", end_date: "28/10/2022", user_id:7, cost
 Booking.create(start_date: "29/08/2022", end_date: "03/09/2022", user_id:8, costume_id: 9)
 Booking.create(start_date: "30/06/2022", end_date: "03/07/2022", user_id:9, costume_id: 10)
 
-puts "created #{Booking.count} users"
+puts "created #{Booking.count} bookings"

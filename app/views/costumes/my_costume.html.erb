@@ -1,0 +1,18 @@
+
+  <div class = "center">
+  <div class="index-container">
+  <h1 class="p-4">Costumes</h1>
+  <div class="card-container">
+  <% @costumes.each do |costume| %>
+    <div class = "card">
+      <div class="card-item-image">
+          <%= image_tag costume.photo_url  %>
+      </div>
+        <h3><%= costume.name %></h3>
+         <p><%= costume.size %></p>
+        <h4>£<%= costume.price %> per day</h4>
+    </div>
+  <% end %>
+</div>
+</div>
+</div>
