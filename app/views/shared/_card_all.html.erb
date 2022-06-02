@@ -2,11 +2,13 @@
   <% @costumes.each do |costume| %>
     <div class = "card">
       <div class="card-item-image">
-          <%= image_tag costume.photo_url  %>
+      <%= link_to costume_path(costume[:id]) do %>
+        <%= image_tag(costume.photo_url) %>
+      <% end %>
       </div>
-         <p><%= costume.size %> </p>
+         <p>Size: <%= costume.size %></p>
         <h3><%=link_to costume.name, costume_path(costume[:id])%></h3>
-        <h4><strong>Rent</strong> from <%= costume.price %></h4>
+        <h4><strong>Rent</strong> from £<%= costume.price %></h4>
     </div>
   <% end %>
 </div>

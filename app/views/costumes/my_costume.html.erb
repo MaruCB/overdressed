@@ -6,10 +6,12 @@
   <% @costumes.each do |costume| %>
     <div class = "card">
       <div class="card-item-image">
-          <%= image_tag costume.photo_url  %>
+      <%= link_to costume_path(costume[:id]) do %>
+        <%= image_tag(costume.photo_url) %>
+      <% end %>
       </div>
         <h3><%= costume.name %></h3>
-         <p><%= costume.size %></p>
+         <p>Size: <%= costume.size %></p>
         <h4>£<%= costume.price %> per day</h4>
     </div>
   <% end %>
