@@ -1,20 +1,31 @@
-
-  <div class = "center">
-  <div class="index-container">
-  <h1 class="p-4">Costumes</h1>
-  <div class="card-container">
-  <% @costumes.each do |costume| %>
-    <div class = "card">
-      <div class="card-item-image">
-      <%= link_to costume_path(costume[:id]) do %>
-        <%= image_tag(costume.photo_url) %>
-      <% end %>
-      </div>
-        <h3><%= costume.name %></h3>
-         <p>Size: <%= costume.size %></p>
-        <h4>£<%= costume.price %> per day</h4>
-    </div>
+<% if @costumes.blank? == true %>
+<div class = "center">
+    <div class="index-container">
+    <h1 class="p-4">Costumes</h1>
+    <p style="text-align:center; color: RGB(100, 91, 85); padding-top: 90px">You don't have any Costume added!</p>
+  <%= link_to costumes_path do %>
+  <%= image_tag "outfit.png", style:"width: 70px; height: 70px; opacity: 0.8 " %>
   <% end %>
-</div>
-</div>
-</div>
+  </div>
+  </div>
+<% elsif @costumes.blank? == false %>
+    <div class = "center">
+    <div class="index-container">
+    <h1 class="p-4">Costumes</h1>
+    <div class="card-container">
+    <% @costumes.each do |costume| %>
+      <div class = "card">
+        <div class="card-item-image">
+        <%= link_to costume_path(costume[:id]) do %>
+          <%= image_tag(costume.photo_url) %>
+        <% end %>
+        </div>
+          <h3><%= costume.name %></h3>
+          <p>Size: <%= costume.size %></p>
+          <h4>£<%= costume.price %> per day</h4>
+      </div>
+    <% end %>
+  </div>
+  </div>
+  </div>
+<% end %>
