@@ -1,10 +1,11 @@
-// .sign_up {
-//   display: flex;
-//   flex-direction: column;
-//   justify-content: space-between;
-//   background: $white;
-//   font-family: 'Righteous', cursive;
-//   margin: 0px;
-//   width: 100%;
-//   padding: 16px;
-// }
+.booking-container {
+  margin: 0;
+  position: absolute;
+  top: 50%;
+  -ms-transform: translateY(-50%);
+  transform: translateY(-50%);
+
+  .book-btn{
+    width: 100% !important; // overrides bootstrap controls
+    }
+}
