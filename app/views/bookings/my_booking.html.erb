@@ -3,6 +3,7 @@
   <div class = "center">
   <div class="index-container">
   <h1 class="p-4" >My Bookings</h1>
+
   <div class="card-container">
   <% @bookings.each do |booking| %>
     <div class = "card">
@@ -24,6 +25,8 @@
       </div>
     <% end %>
   </div>
+
+
   <% elsif @bookings.blank? == true %>
   <div class = "center">
     <h1 class="p-4" >My Bookings</h1>
@@ -41,11 +44,16 @@
 <br>
 <br>
 
+
 <hr>
+
+
 <% if @my_costume_bookings.blank? == false %>
 <div class = "center">
   <div class="index-container">
   <h1 class="p-4" >My Pending Bookings</h1>
+
+
     <div class="card-container">
     <% @my_costume_bookings.each do |booking| %>
       <div class = "card">
@@ -54,6 +62,7 @@
           <%= image_tag(booking.costume.photo_url) %>
           <% end %>
         </div>
+
           <h5 class="pending-booking-user" style="text-align: center"><strong>Booking made by:</strong> <%= booking.user.email %></h5>
           <%if booking.accepted == "pending"%>
           <div class="d-flex justify-content-center">
@@ -64,6 +73,7 @@
             <%= image_tag "decline.png", class: "decision-button", style: "width:40px; height:40px; margin:5px" %>
             <% end %>
           </div>
+
           <% elsif booking.accepted == "accepted" || "declined" %>
             <h6><%= booking.accepted.capitalize %></h6>
           <% end %>
