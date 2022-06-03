@@ -1,7 +1,7 @@
 class Costume < ApplicationRecord
   CATEGORY = %w[Halloween Folk Christmas Party Fancy Carnival Animal Fantasy]
   belongs_to :user
-  has_many :bookings
+  has_many :bookings, dependent: :destroy
 
   include PgSearch::Model
   pg_search_scope :search_by_name_size_and_category,

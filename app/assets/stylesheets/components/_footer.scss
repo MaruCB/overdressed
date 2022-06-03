@@ -8,16 +8,17 @@
   height: 50px;
   padding: 0px 20px;
   color: rgba(0,0,0,0.3);
-  bottom: 0px;
   font-family: 'Righteous', cursive;
+  opacity: 1;
+  bottom: 0;
 }
 .footer-links {
   display: flex;
   align-items: center;
 }
 .footer-links a {
-  color: black;
-  opacity: 0.15;
+  color: purple;
+  opacity: 0.50;
   text-decoration: none;
   font-size: 24px;
   padding: 0px 10px;
@@ -27,4 +28,18 @@
 }
 .footer .fa-heart {
   color: #D23333;
+}
+
+.logo-footer {
+  font-family: 'Righteous', cursive;
+  color: $purple;
+  text-decoration: none;
+  opacity: 0.50;
+}
+
+.logo-footer:hover {
+  font-family: 'Righteous', cursive;
+  color: $purple;
+  text-decoration: none;
+  opacity: 1;
 }

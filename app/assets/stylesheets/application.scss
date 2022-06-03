@@ -20,3 +20,18 @@
 
 // Fonts
 @import url('https://fonts.googleapis.com/css2?family=Righteous&display=swap');
+
+html, body {
+  height: 100%;
+  margin: 0;
+}
+
+.wrapper {
+  min-height: 100%;
+  margin-bottom: -50px;
+}
+
+.footer,
+.push {
+  height: 50px;
+}

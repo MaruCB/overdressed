@@ -1,6 +1,6 @@
 <div class="container pt-5">
 <div class="row justify-content: center">
-<div class="col-12 col-md-6 col-lg-4 booking-container" >
+  <div class="col-12 col-md-6 col-lg-4 booking-container" >
 <section class="login">
 <div class = "login-card">
 <h2>Log in</h2>
@@ -22,10 +22,16 @@
   </div>
 <% end %>
 <br>
-<%= image_tag "problem.png", style: "height: 40px", class: " dropdown-toggle d-flex", id: "navbarDropdown", data: { bs_toggle: "dropdown" }, 'aria-haspopup': true, 'aria-expanded': false %>
-            <div class="dropdown-menu dropdown-menu-end mt-1" style="opacity: 0.7; padding: 10px" aria-labelledby="navbarDropdown">
-<%= render "devise/shared/links" %>
-</div>
+<div class="row align-items-center">
+  <div class="col-1">
+    <%= image_tag "problem.png", style: "height: 40px;", class: "dropdown-toggle, decision-button", id: "navbarDropdown", data: { bs_toggle: "dropdown" }, 'aria-haspopup': true, 'aria-expanded': false %>
+    <div class="dropdown-menu dropdown-menu-end mt-1" style="opacity: 0.7; padding: 10px;" aria-labelledby="navbarDropdown">
+      <%= render "devise/shared/links" %>
+    </div>
+  </div>
+  <div class="col-2">
+    <p style="margin: 0; position: relative; right:60px; padding:0">Are you lost?</p>
+  </div>
 </div>
 </section>
 </div>
