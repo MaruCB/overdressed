@@ -16,7 +16,9 @@
 }
 
 .searchbar {
-  // border-radius: 50px; NOT DOING ANYTHING :(
+  width: 200px;
+  flex-grow: 0;
+  display: flex;
 }
 
 .sign-up {

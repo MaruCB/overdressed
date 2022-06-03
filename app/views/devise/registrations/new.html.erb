@@ -1,3 +1,6 @@
+<div class="container pt-5">
+<div class="row justify-content: center">
+<div class="col-12 col-md-6 col-lg-4 booking-container" >
 <div class="sign_up">
   <h2>Sign up</h2>
 
@@ -5,7 +8,11 @@
     data: {turbo: false}) do |f| %>
     <%= f.error_notification %>
 
-    <div class="form-inputs">
+    <div class="form-inputs" style="text-align: left">
+      <%= f.input :first_name,
+                  required: true,
+                  autofocus: true,
+                  input_html: { autocomplete: "first_name" }%>
       <%= f.input :email,
                   required: true,
                   autofocus: true,
@@ -20,9 +27,10 @@
     </div>
 
     <div class="form-actions">
-      <%= f.button :submit, "Sign up" %>
+      <%= f.button :submit, "Sign up", class: "btn book-btn", style: "width: 25vw; margin:auto"%>
     </div>
   <% end %>
-
-  <%= render "devise/shared/links" %>
+</div>
+</div>
+</div>
 </div>

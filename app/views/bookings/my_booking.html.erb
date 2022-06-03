@@ -12,8 +12,15 @@
         <% end %>
       </div>
         <h3><%= booking.costume.name %></h3>
-         <p><strong>Status: </strong><%= booking.accepted %></p>
+        <% if booking.accepted == "pending" %>
+          <h5 class="pending-booking-user"><strong>Status: </strong><%= image_tag "hourglass.png", style: "width:25px; height:25px; margin:5px" %> pending...</h5>
+         <% elsif booking.accepted == "Accepted" %>
+          <h5 class="pending-booking-user"><strong>Status: </strong><%= image_tag "accepted.png", style: "width:28px; height:28px; margin:5px" %> Accepted!</h5>
+         <% elsif booking.accepted == "Declined" %>
+          <h5 class="pending-booking-user"><strong>Status: </strong><%= image_tag "declined.png", style: "width:28px; height:28px; margin:5px" %> Declined</h5>
+         <% end %>
         <h4>£<%= booking.costume.price %> per day</h4>
+        <%= link_to "Delete this Booking", my_booking_path(@booking), class: "btn book-btn", data: { turbo_method: :delete, turbo_confirm: "Are you sure you want to delete this booking?" } %>
       </div>
     <% end %>
   </div>
@@ -47,10 +54,16 @@
           <%= image_tag(booking.costume.photo_url) %>
           <% end %>
         </div>
-          <h5><strong>Booked by:</strong> <%= booking.user.email %></h5>
+          <h5 class="pending-booking-user" style="text-align: center"><strong>Booking made by:</strong> <%= booking.user.email %></h5>
           <%if booking.accepted == "pending"%>
-            <%= link_to "Accept Booking", accept_booking_path(booking), class: "btn btn-success", data: {turbo_method: :post} %>
-            <%= link_to "Decline Booking", decline_booking_path(booking), class: "btn btn-danger", data: {turbo_method: :post} %>
+          <div class="d-flex justify-content-center">
+            <%= link_to accept_booking_path(booking), data: {turbo_method: :post} do %>
+            <%= image_tag "accept.png", class: "decision-button", style: "width:40px; height:40px; margin:5px"  %>
+            <% end %>
+            <%= link_to decline_booking_path(booking), data: {turbo_method: :post} do %>
+            <%= image_tag "decline.png", class: "decision-button", style: "width:40px; height:40px; margin:5px" %>
+            <% end %>
+          </div>
           <% elsif booking.accepted == "accepted" || "declined" %>
             <h6><%= booking.accepted.capitalize %></h6>
           <% end %>

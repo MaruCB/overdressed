@@ -1,11 +1,13 @@
-
+<div class="container pt-5">
+<div class="row justify-content: center">
+<div class="col-12 col-md-6 col-lg-4 booking-container" >
 <section class="login">
 <div class = "login-card">
 <h2>Log in</h2>
 
 <%= simple_form_for(resource, as: resource_name, url: session_path(resource_name),
   data: {turbo: false}) do |f| %>
-  <div class="form-inputs">
+  <div class="form-inputs" style="text-align: left">
     <%= f.input :email,
                 required: false,
                 autofocus: true,
@@ -13,14 +15,18 @@
     <%= f.input :password,
                 required: false,
                 input_html: { autocomplete: "current-password" } %>
-    <%= f.input :remember_me, as: :boolean if devise_mapping.rememberable? %>
   </div>
 
   <div class="form-actions">
-    <%= f.button :submit, "Log in" %>
+    <%= f.button :submit, "Log in", class: "btn book-btn", style: "width: 25vw; margin:auto" %>
   </div>
 <% end %>
-
+<%= image_tag "problem.png", style: "height: 40px", class: " dropdown-toggle d-flex", id: "navbarDropdown", data: { bs_toggle: "dropdown" }, 'aria-haspopup': true, 'aria-expanded': false %>
+            <div class="dropdown-menu dropdown-menu-end mt-1" style="opacity: 0.7; padding: 10px" aria-labelledby="navbarDropdown">
 <%= render "devise/shared/links" %>
 </div>
+</div>
 </section>
+</div>
+</div>
+</div>
