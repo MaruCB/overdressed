@@ -8,7 +8,7 @@
       </div>
          <p>Size: <%= costume.size %></p>
         <h3><%=link_to costume.name, costume_path(costume[:id])%></h3>
-        <h4><strong>Rent</strong> from £<%= costume.price %></h4>
+        <h4><strong>Rent</strong> from £<%= costume.price.round %></h4>
     </div>
   <% end %>
 </div>
