@@ -10,7 +10,13 @@
   </head>
 
   <body>
+    <div class="wrapper">
    <%= render 'shared/navbar' %>
-    <%= yield %>
+      <%= yield %>
+
+      <div class="push"></div>
+    </div>
+        <%= render 'shared/footer' %>
+
   </body>
 </html>
