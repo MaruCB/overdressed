@@ -31,6 +31,8 @@
               <%= link_to "Delete this costume", costume_path(@costume), class: "btn book-btn", data: { turbo_method: :delete, turbo_confirm: "Are you sure you want to delete this costume?" } %>
           </div>
         </div>
+      <br>
+      <br>
       <% else %>
         <div>
           <div class="booking-container" id='booking-btns' style="width: 40vw">
@@ -47,6 +49,8 @@
               <% end %>
             </div>
           </div>
+        <br>
+        <br>
         </div>
       <% end %>
       </div>
