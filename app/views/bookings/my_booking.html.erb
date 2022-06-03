@@ -2,7 +2,7 @@
 
   <div class = "center">
   <div class="index-container">
-  <h1 class="p-4" >My Bookings</h1>
+  <h1 class="p-4" >Your Bookings</h1>
 
   <div class="card-container">
   <% @bookings.each do |booking| %>
@@ -38,7 +38,7 @@
 
   <% elsif @bookings.blank? == true %>
   <div class = "center">
-    <h1 class="p-4" >My Bookings</h1>
+    <h1 class="p-4" >Your Bookings</h1>
     <div class="no-bookings-yet mt-5" style="text-align:center">
       <p style="text-align:center; color: RGB(100, 91, 85)">No bookings yet!</p>
       <%= link_to costumes_path do %>
@@ -60,7 +60,7 @@
 <% if @my_costume_bookings.blank? == false %>
 <div class = "center">
   <div class="index-container">
-  <h1 class="p-4" >My Pending Bookings</h1>
+  <h1 class="p-4" >Your Costumes Bookings</h1>
 
 
     <div class="card-container">
@@ -90,7 +90,7 @@
     <% end %>
     <% elsif @my_costume_bookings.blank? == true %>
     <div class = "center">
-    <h1 class="p-4" >My Pending Bookings</h1>
+    <h1 class="p-4" >Your Costumes Bookings</h1>
     <div class="no-bookings-yet mt-5" style="text-align:center">
       <p style="text-align:center; color: RGB(100, 91, 85)">No one booked any of your costumes yet!</p>
         <%= image_tag "sad.png", style:"width: 60px; height: 60px; opacity: 0.7", class: "mb-4" %>

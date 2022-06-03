@@ -34,7 +34,7 @@
       <% else %>
         <div>
           <div class="booking-container" id='booking-btns' style="width: 40vw">
-            <h2>Rent this costume from <strong>£<%= @costume.price %>/day</strong></h2>
+            <h2>Rent this costume from <strong>£<%= @costume.price.round %>/day</strong></h2>
             <br>
             <div class="simple_form">
               <%= simple_form_for [@costume, @booking] do |f| %>
@@ -42,7 +42,7 @@
                 <%= f.input :end_date, html5: true %>
                 <br>
                 <hr>
-                <p>Price £<%= @costume.price.round  %></p>
+                <p>Price £<%= @costume.price.round  %> per day</p>
                 <%= f.button :submit, value: "Book now", class: "book-btn" %>
               <% end %>
             </div>
