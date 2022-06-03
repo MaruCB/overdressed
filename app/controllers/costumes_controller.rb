@@ -2,7 +2,17 @@ class CostumesController < ApplicationController
   before_action :set_costume, only: [:show, :edit, :update, :destroy]
 
   def index
-    @costumes = Costume.order(created_at: :desc)
+    if params[:query].present?
+      # @results = PgSearch.multisearch(params[:query])
+      # @costumes = []
+      # @results.each do |result|
+      #   @costumes << result.searchable
+      # end
+      # raise
+    @costumes = Costume.search_by_name_size_and_category(params[:query])
+    else
+      @costumes = Costume.order(created_at: :desc)
+    end
   end
 
   def new

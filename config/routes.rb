@@ -6,4 +6,6 @@ Rails.application.routes.draw do
   end
   get "my_booking", to: "bookings#my_booking"
   get "my_costume", to: "costumes#my_costume"
+  post "bookings/:id/accept", to: "bookings#accept", as: :accept_booking
+  post "bookings/:id/decline", to: "bookings#decline", as: :decline_booking
 end
