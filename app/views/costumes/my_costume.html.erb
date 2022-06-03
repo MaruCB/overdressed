@@ -11,7 +11,14 @@
         </div>
           <h3><%= costume.name %></h3>
           <p>Size: <%= costume.size %></p>
+
+        <div class="d-flex justify-content-between align-items-center">
           <h4>£<%= costume.price.round %> per day</h4>
+
+          <%= link_to costume_path(costume[:id]), method: :delete, data: { turbo_method: :delete, turbo_confirm: "Are you sure you want to delete this costume?" } do %>
+          <%= image_tag ("trashcan.png"), style: "width:28px; height:28px; margin:5px" %>
+          <% end %>
+        </div>
       </div>
       <% end %>
     </div>

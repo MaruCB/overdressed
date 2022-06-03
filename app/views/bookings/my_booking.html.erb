@@ -5,7 +5,7 @@
   <h1 class="p-4" >My Bookings</h1>
   <div class="card-container">
   <% @bookings.each do |booking| %>
-    <div class = "card">
+    <div class = "card p-2">
       <div class="card-item-image">
       <%= link_to costume_path(booking.costume[:id]) do %>
         <%= image_tag(booking.costume.photo_url) %>
@@ -19,9 +19,18 @@
          <% elsif booking.accepted == "Declined" %>
           <h5 class="pending-booking-user"><strong>Status: </strong><%= image_tag "declined.png", style: "width:28px; height:28px; margin:5px" %> Declined</h5>
          <% end %>
-        <h4>£<%= booking.costume.price %> per day</h4>
-        <%= link_to "Delete this Booking", my_booking_path(@booking), class: "btn book-btn", data: { turbo_method: :delete, turbo_confirm: "Are you sure you want to delete this booking?" } %>
+        <div class="d-flex justify-content-between align-items-center">
+          <h4>£<%= booking.costume.price.round %> per day</h4>
+
+          <%= link_to my_booking_path(@booking), method: :delete, data: { turbo_method: :delete, turbo_confirm: "Are you sure you want to delete this booking?" } do %>
+          <%= image_tag "trashcan.png", style: "width:28px; height:28px; margin:5px" %>
+          <% end %>
+        </div>
       </div>
+      <%# <i class="fa-solid fa-trash-can"></i> %>
+      <%# <%= link_to my_booking_path(@booking), class: "btn book-btn" %>
+      <%# <i class="fa-solid fa-trash-can">
+      <% end %>
     <% end %>
   </div>
   <% elsif @bookings.blank? == true %>
@@ -83,4 +92,3 @@
   </div>
   </div>
   </div>
->>>>>>> e6109e6fe49796bd585bfa63c2616948c904be61
