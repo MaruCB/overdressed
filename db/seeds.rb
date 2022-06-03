@@ -11,16 +11,16 @@
 
 puts "creating users..."
 
-User.create(username: "Anna", email: "anna@gmail.com", password: "password")
-User.create(username: "Ben", email: "ben@gmail.com", password: "password")
-User.create(username: "Chris", email: "chris@gmail.com", password: "password")
-User.create(username: "Maria", email: "maria@gmail.com", password: "password")
-User.create(username: "Filipe", email: "filipe@gmail.com", password: "password")
-User.create(username: "Diandra", email: "diandra@gmail.com", password: "password")
-User.create(username: "Marie", email: "marie@gmail.com", password: "password")
-User.create(username: "Tom", email: "tom@gmail.com", password: "password")
-User.create(username: "Hector", email: "hector@gmail.com", password: "password")
-User.create(username: "Leanna", email: "leanna@gmail.com", password: "password")
+User.create(first_name: "Anna", username: "Anna", email: "anna@gmail.com", password: "password")
+User.create(first_name: "Ben", username: "Ben", email: "ben@gmail.com", password: "password")
+User.create(first_name: "Chris", username: "Chris", email: "chris@gmail.com", password: "password")
+User.create(first_name: "Maria", username: "Maria", email: "maria@gmail.com", password: "password")
+User.create(first_name: "Filipe", username: "Filipe", email: "filipe@gmail.com", password: "password")
+User.create(first_name: "Diandra", username: "Diandra", email: "diandra@gmail.com", password: "password")
+User.create(first_name: "Marie", username: "Marie", email: "marie@gmail.com", password: "password")
+User.create(first_name: "Tom", username: "Tom", email: "tom@gmail.com", password: "password")
+User.create(first_name: "Hector", username: "Hector", email: "hector@gmail.com", password: "password")
+User.create(first_name: "Leanna", username: "Leanna", email: "leanna@gmail.com", password: "password")
 
 puts "created #{User.count} users"
 puts "creating costumes..."

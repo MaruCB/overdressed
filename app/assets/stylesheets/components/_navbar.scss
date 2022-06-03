@@ -91,9 +91,13 @@ li {
 
   .search-field:focus {
     background-color: white;
-    border: none !important;
+    // border: none !important;
     width: 100%;
     padding: none;
+    border: none;
+    resize: none;
+    outline: none;
+
     }
 
   .search-button {
