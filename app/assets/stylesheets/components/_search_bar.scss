@@ -1,0 +1,20 @@
+.searchbar {
+  border-bottom: 1px solid black;
+  padding-right: 100px;
+  font-family: Arial, Helvetica, sans-serif;
+  color: grey;
+
+  .search-field {
+  background-color: white;
+  border: none;
+  }
+
+  .search-button {
+border: none;
+background-color: white;
+}
+
+i {
+  color: $purple;
+}
+}

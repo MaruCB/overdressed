@@ -2,12 +2,12 @@
     <%= link_to "OVERDRESSED", root_path, class: "logo" %>
     <% if user_signed_in? %>
         <%= form_tag costumes_path, method: :get, class: "searchbar" do %>
+          <button type="submit" class = "search-button"><i class="fa fa-search"></i></button>
           <%= text_field_tag :query,
           params[:query],
           class: "search-field",
           placeholder: "What are you searching for today?"
           %>
-          <button type="submit" class = "search-button"><i class="fa fa-search"></i></button>
         <% end %>
       <div class="sign-up">
           <li class="m-1">
