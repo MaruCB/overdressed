@@ -1,15 +1,13 @@
 <div class = "show-container">
   <div class="row">
     <div class="col-12 col-md-6">
-    <br>
-        <div class="img-container">
+      <br>
+      <div class="img-container">
         <%= image_tag @costume.photo_url %>
-        </div>
-
-  <br>
-    <br>
-     <br>
-
+      </div>
+      <br>
+      <br>
+      <br>
     </div>
 
     <div class="col-12 col-md-6">
@@ -17,24 +15,25 @@
         <h2><%= @costume.name %></h2>
         <hr>
         <h4> Description: </h4>
-          <p> <%= @costume.description %> </p>
+          <p><%= @costume.description %></p>
         <h4> Category: </h4>
           <p><%= @costume.category %></p>
         <h4> Size: </h4>
-          <p><%= @costume.size %> </h4></p>
-        </div>
+          <p><%= @costume.size %></p>
 
-         <br>
-          <br>
-        <% if current_user == @costume.user %>
-
-        <div class="booking-container" style="width: 40vw">
-            <%= link_to "Edit this costume", edit_costume_path(@costume), class: " btn book-btn" %>
-            <hr>
-            <%= link_to "Delete this costume", costume_path(@costume), class: "btn book-btn", data: { turbo_method: :delete, turbo_confirm: "Are you sure you want to delete this costume?" } %>
+      <br>
+      <br>
+      <% if current_user == @costume.user %>
+        <div>
+          <div class="booking-container" id='booking-btns'>
+              <%= link_to "Edit this costume", edit_costume_path(@costume), class: " btn book-btn" %>
+              <hr>
+              <%= link_to "Delete this costume", costume_path(@costume), class: "btn book-btn", data: { turbo_method: :delete, turbo_confirm: "Are you sure you want to delete this costume?" } %>
+          </div>
         </div>
-        <% else %>
-          <div class="booking-container" style="width: 40vw">
+      <% else %>
+        <div>
+          <div class="booking-container" id='booking-btns' style="width: 40vw">
             <h2>Rent this costume from <strong>£<%= @costume.price %>/day</strong></h2>
             <br>
             <div class="simple_form">
@@ -46,9 +45,12 @@
                 <p>Price £<%= @costume.price.round  %></p>
                 <%= f.button :submit, value: "Book now", class: "book-btn" %>
               <% end %>
-             </div>
+            </div>
           </div>
-        <% end %>
+        </div>
+      <% end %>
+      </div>
+      </div>
     </div>
   </div>
 </div>
