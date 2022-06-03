@@ -2,7 +2,7 @@ class Costume < ApplicationRecord
   CATEGORY = %w[Halloween Folk Christmas Party Fancy Carnival Animal Fantasy]
   SIZE = %w[XS(4) S(8) M(12) L(16) XL(20) XXL(22)]
   belongs_to :user
-  has_many :bookings, dependent: :destroy
+  has_many :bookings
 
   include PgSearch::Model
   pg_search_scope :search_by_name_size_and_category,
