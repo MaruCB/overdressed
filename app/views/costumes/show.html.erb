@@ -30,8 +30,11 @@
          <br>
           <br>
         <% if current_user == @costume.user %>
-            <%= link_to "Edit this costume", edit_costume_path(@costume), class: "btn btn-cancel" %>
-            <%= link_to "Delete this costume", costume_path(@costume), class: "btn btn-cancel", data: { turbo_method: :delete, turbo_confirm: "Are you sure you want to delete this costume?" } %>
+        <div class="booking-container">
+            <%= link_to "Edit this costume", edit_costume_path(@costume), class: " btn book-btn" %>
+            <hr>
+            <%= link_to "Delete this costume", costume_path(@costume), class: "btn book-btn", data: { turbo_method: :delete, turbo_confirm: "Are you sure you want to delete this costume?" } %>
+        </div>
         <% else %>
           <div class="booking-container">
             <h2>Rent this costume from <strong>£<%= @costume.price %>/day</strong></h2>
